@@ -1,0 +1,75 @@
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+
+super + Return
+	kitty
+
+super + e
+	kitty -e ranger --clean
+
+super + r
+	rofi -show drun
+
+
+
+super + c
+	bspc node -c
+
+super + space
+	bspc node -t ~floating
+
+super + f
+	bspc node -t ~fullscreen
+
+super + p
+	bspc node -t ~pseudo_tiled
+
+
+
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+super + alt + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+
+
+super + {1-5}
+	bspc desktop -f '^{1-5}'
+
+super + shift + {1-5}
+	bspc node -d '^{1-5}'
+
+
+
+super + shift + {b,t,l,o,s,c}
+	{firefox,Telegram,libreoffice,obs,shotcut,code}
+
+
+
+super + alt + p
+	poweroff
+
+
+
+Print
+	maim ~/screenshots/full_$(date +%F_%H-%M-%S).png
+
+super + Print
+	maim -s ~/screenshots/area_$(date +%F_$H-$M-$S).png
+
+
+
+XF86AudioMute
+	wpctl set-mute @DEFAULT_SINK@ toggle
+
+XF86AudioLoverVolume
+	wpctl set-volume @DEFAULT_SINK@ 5%-
+
+XF86AudioRaiseVolume
+	wpctl set-volume @DEFAULT_SUNK@ 5%+
+
+XF86AudioMicMute
+	wpctl set-mute @DEFAULT_SOURCE@ toggle
